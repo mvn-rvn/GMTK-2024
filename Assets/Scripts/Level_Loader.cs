@@ -25,6 +25,8 @@ public class Level_Loader : MonoBehaviour
     public TileBase yellow_finish;
     public TileBase blue_finish;
 
+    public int level_counter = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,6 +82,6 @@ public class Level_Loader : MonoBehaviour
 
     IEnumerator IHaveToDelayLoadingTheFirstLevelForSomeReason() {
         yield return null;
-        Load(1);
+        Load(level_counter);
     }
 }

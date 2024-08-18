@@ -4294,7 +4294,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1481481891}
   - component: {fileID: 1481481892}
-  - component: {fileID: 1481481893}
   m_Layer: 0
   m_Name: GameRunner
   m_TagString: Untagged
@@ -4327,18 +4326,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b94249bf63c9ac14485479d92a434594, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1481481893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1481481890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00e4a546c2a281643b63ac4d0451aed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1735594618
@@ -4593,6 +4580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736865113}
   - component: {fileID: 1736865114}
+  - component: {fileID: 1736865115}
   m_Layer: 0
   m_Name: LevelLoad
   m_TagString: Untagged
@@ -4642,6 +4630,24 @@ MonoBehaviour:
   blue_box: {fileID: 11400000, guid: ccf9c53f01fb26c49908bbf8bf359ba9, type: 2}
   red_finish: {fileID: 11400000, guid: 77b6f59f34b88d44e9ef23529557bd8d, type: 2}
   yellow_finish: {fileID: 11400000, guid: bc132d1e149553245a06bad44f7bf3d4, type: 2}
+  blue_finish: {fileID: 11400000, guid: 8d41a220817960a4fbbbcbf96597d190, type: 2}
+--- !u!114 &1736865115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736865112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4767c69c61e9e45ba564139db8e0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  red_box: {fileID: 11400000, guid: fc20f24d2ce21d8418222ee9d4cf17c5, type: 2}
+  red_finish: {fileID: 11400000, guid: 77b6f59f34b88d44e9ef23529557bd8d, type: 2}
+  yellow_box: {fileID: 11400000, guid: a3b267aab931b8645b7baa5f39567bc6, type: 2}
+  yellow_finish: {fileID: 11400000, guid: bc132d1e149553245a06bad44f7bf3d4, type: 2}
+  blue_box: {fileID: 11400000, guid: ccf9c53f01fb26c49908bbf8bf359ba9, type: 2}
   blue_finish: {fileID: 11400000, guid: 8d41a220817960a4fbbbcbf96597d190, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
