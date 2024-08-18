@@ -25,7 +25,7 @@ public class TM_Player_Movement : MonoBehaviour
     public int start_x;
     public int start_y;
 
-    bool grab_mode;
+    public bool grab_mode;
     string into_away;
     string side;
 
