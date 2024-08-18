@@ -17,7 +17,6 @@ public class TM_Player_Movement : MonoBehaviour
     public TileBase pl_right;
     TileBase pl_current;
     public TileBase wall;
-    public TileBase[] boxes = new TileBase[4];
 
     int x = 0;
     int y = 0;
@@ -193,5 +192,14 @@ public class TM_Player_Movement : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Reload(int new_x, int new_y) {
+        grab_mode = false;
+        pl_current = pl_down;
+        x = new_x;
+        y = new_y;
+        player_tm.ClearAllTiles();
+        player_tm.SetTile(new Vector3Int(x, y, 0), pl_current);
     }
 }

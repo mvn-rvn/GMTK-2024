@@ -526,11 +526,6 @@ MonoBehaviour:
   pl_left: {fileID: 11400000, guid: e851031c87bec464ca639d7051e025a3, type: 2}
   pl_right: {fileID: 11400000, guid: 1729b7d005fe82044abe35ffb6ca2eb7, type: 2}
   wall: {fileID: 11400000, guid: 4313c21344824e44ebf11edf60eb6244, type: 2}
-  boxes:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   start_x: 9
   start_y: -2
 --- !u!1 &1027183186
@@ -4299,6 +4294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1481481891}
   - component: {fileID: 1481481892}
+  - component: {fileID: 1481481893}
   m_Layer: 0
   m_Name: GameRunner
   m_TagString: Untagged
@@ -4331,6 +4327,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b94249bf63c9ac14485479d92a434594, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1481481893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481481890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e4a546c2a281643b63ac4d0451aed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1735594618
@@ -4574,12 +4582,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e87efa58724ce841b4dcedd1b1084d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxes:
-  - {fileID: 11400000, guid: fc20f24d2ce21d8418222ee9d4cf17c5, type: 2}
-  - {fileID: 11400000, guid: a3b267aab931b8645b7baa5f39567bc6, type: 2}
-  - {fileID: 0}
-  - {fileID: 11400000, guid: 4313c21344824e44ebf11edf60eb6244, type: 2}
   wall: {fileID: 11400000, guid: 4313c21344824e44ebf11edf60eb6244, type: 2}
+--- !u!1 &1736865112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1736865113}
+  - component: {fileID: 1736865114}
+  m_Layer: 0
+  m_Name: LevelLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1736865113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736865112}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.98399, y: 0.36657122, z: -0.023005188}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736865114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736865112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7cc3f0a18daf6349895e1bd2f27e0b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - {fileID: 4900000, guid: 347eebe43761e2745987b2ccff08ecfd, type: 3}
+  - {fileID: 4900000, guid: 4c8e5251a9436c641b77566765dd079c, type: 3}
+  - {fileID: 4900000, guid: f205aede2bc8d9245906f3d907ba91fc, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  y_offset: 9
+  x_offset: 0
+  floor: {fileID: 11400000, guid: faea6df92b8e88642984cd01d74900e0, type: 2}
+  wall: {fileID: 11400000, guid: 4313c21344824e44ebf11edf60eb6244, type: 2}
+  red_box: {fileID: 11400000, guid: fc20f24d2ce21d8418222ee9d4cf17c5, type: 2}
+  yellow_box: {fileID: 11400000, guid: a3b267aab931b8645b7baa5f39567bc6, type: 2}
+  blue_box: {fileID: 11400000, guid: ccf9c53f01fb26c49908bbf8bf359ba9, type: 2}
+  red_finish: {fileID: 11400000, guid: 77b6f59f34b88d44e9ef23529557bd8d, type: 2}
+  yellow_finish: {fileID: 11400000, guid: bc132d1e149553245a06bad44f7bf3d4, type: 2}
+  blue_finish: {fileID: 11400000, guid: 8d41a220817960a4fbbbcbf96597d190, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4588,3 +4651,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 763091504}
   - {fileID: 1481481891}
+  - {fileID: 1736865113}

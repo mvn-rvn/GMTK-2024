@@ -5,7 +5,6 @@ using UnityEngine.Tilemaps;
 
 public class TM_Box_Move : MonoBehaviour
 {
-    public TileBase[] boxes = new TileBase[4];
     public TileBase wall;
 
     Tilemap player_tm;
