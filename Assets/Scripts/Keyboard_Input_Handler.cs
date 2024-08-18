@@ -8,6 +8,8 @@ public class Keyboard_Input_Handler : MonoBehaviour
     public string HandleInput() {
         if(Input.GetButtonDown("Reload")) {
             return "reload";
+        } else if(Input.GetButtonDown("Grab")) {
+            return "grab";
         } else if(Input.anyKeyDown) {
             switch(Input.GetAxisRaw("Vertical")) {
                 case 1:
