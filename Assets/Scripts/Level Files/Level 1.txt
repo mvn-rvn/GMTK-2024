@@ -2,8 +2,8 @@ W W W W W W W W W W W W W W W W W W
 W W W W W W W W W W W W W W W W W W
 W W W W W W W W W W W W W W W W W W
 W W W W W W W b b b W W W W W W W W
-W W W W W W F b b b F W W W W W W W
-W W W W W F F b b b F F W W W W W W
+W W W W W W F F F F F W W W W W W W
+W W W W W F F F F F F F W W W W W W
 W W W W W F F F F F F F W W W W W W
 W W W W W F F B B B F F W W W W W W
 W W W W W F F B B B F F W W W W W W

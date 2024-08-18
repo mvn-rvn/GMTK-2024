@@ -15,9 +15,11 @@ public class Level_Loader : MonoBehaviour
     Tilemap player_tm;
     Tilemap room_tm;
     Tilemap boxes_tm;
+    Tilemap void_tm;
 
     public TileBase floor;
     public TileBase wall;
+    public TileBase void_tile;
     public TileBase red_box;
     public TileBase yellow_box;
     public TileBase blue_box;
@@ -34,6 +36,7 @@ public class Level_Loader : MonoBehaviour
         player_tm = GameObject.Find("Player").GetComponent<Tilemap>();
         room_tm = GameObject.Find("Room").GetComponent<Tilemap>();
         boxes_tm = GameObject.Find("Boxes").GetComponent<Tilemap>();
+        void_tm = GameObject.Find("VoidTiles").GetComponent<Tilemap>();
         StartCoroutine(IHaveToDelayLoadingTheFirstLevelForSomeReason());
     }
 
@@ -45,6 +48,7 @@ public class Level_Loader : MonoBehaviour
 
     public void Load(int level_number) {
             boxes_tm.ClearAllTiles();
+            void_tm.ClearAllTiles();
             string[] level_data = levels[level_number].ToString().Split("\n");
             for(int i = 0; i < level_data.Length; i += 1) {
                 level_data[i] = level_data[i].Replace(" ", "");
@@ -53,6 +57,9 @@ public class Level_Loader : MonoBehaviour
                     switch(level_data[i][j]) {
                         case 'W':
                             room_tm.SetTile(new Vector3Int(x_offset + j, y_offset - i, 0), wall);
+                            break;
+                        case 'V':
+                            void_tm.SetTile(new Vector3Int(x_offset + j, y_offset - i, 0), void_tile);
                             break;
                         case 'P':
                             GameObject.Find("Player").GetComponent<TM_Player_Movement>().Reload(x_offset + j, y_offset - i);

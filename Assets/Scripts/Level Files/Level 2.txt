@@ -3,8 +3,8 @@ W W W W W W W W W W W W W W W W W W
 W W W W W W W W W W W W W W W W W W
 W W W W W W W W W W W W W W W W W W
 W W W W W W W W r r W W W W W W W W
-W W W W W W W W r r W W W W W W W W
-W W W W W W W W r r W W W W W W W W
+W W W W W W W W F F W W W W W W W W
+W W W W W W W W F F W W W W W W W W
 W W W W W W b b b b W W W W W W W W
 W W W W W W b b b b W W W W W W W W
 W W W W W W F F F F W W W W W W W W

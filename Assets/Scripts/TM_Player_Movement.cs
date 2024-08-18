@@ -10,6 +10,7 @@ public class TM_Player_Movement : MonoBehaviour
     Tilemap player_tm;
     Tilemap room_tm;
     Tilemap boxes_tm;
+    Tilemap void_tm;
 
     public TileBase pl_up;
     public TileBase pl_down;
@@ -17,6 +18,7 @@ public class TM_Player_Movement : MonoBehaviour
     public TileBase pl_right;
     TileBase pl_current;
     public TileBase wall;
+    public TileBase void_tile;
 
     int x = 0;
     int y = 0;
@@ -35,6 +37,7 @@ public class TM_Player_Movement : MonoBehaviour
         player_tm = gameObject.GetComponent<Tilemap>();
         room_tm = GameObject.Find("Room").GetComponent<Tilemap>();
         boxes_tm = GameObject.Find("Boxes").GetComponent<Tilemap>();
+        void_tm = GameObject.Find("VoidTiles").GetComponent<Tilemap>();
         player_tm.ClearAllTiles();
         pl_current = pl_down;
         x = start_x;
@@ -68,7 +71,7 @@ public class TM_Player_Movement : MonoBehaviour
                     pl_current = pl_right;
                     break;
             }
-            if(room_tm.GetTile(new Vector3Int(x, y, 0)) == wall) {
+            if(room_tm.GetTile(new Vector3Int(x, y, 0)) == wall || void_tm.GetTile(new Vector3Int(x, y, 0)) == void_tile) {
                 x = prev_x;
                 y = prev_y;
             } else if(boxes_tm.GetTile(new Vector3Int(x, y, 0)) != null) {
@@ -154,7 +157,7 @@ public class TM_Player_Movement : MonoBehaviour
                         break;
                 }
             }
-            if(room_tm.GetTile(new Vector3Int(x, y, 0)) == wall || ignore_input == true) {
+            if(room_tm.GetTile(new Vector3Int(x, y, 0)) == wall || void_tm.GetTile(new Vector3Int(x, y, 0)) == void_tile || ignore_input == true) {
                 x = prev_x;
                 y = prev_y;
             } else if(!GameObject.Find("Boxes").GetComponent<TM_Box_Move>().AttemptBoxAlter(

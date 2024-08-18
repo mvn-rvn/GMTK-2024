@@ -180,8 +180,12 @@ public class TM_Box_Move : MonoBehaviour
         if(into_away == "away") {
             if(side == "top") {
                 foreach(Vector3Int pos in all_neighbors_pos) {
-                    if(room_tm.GetTile(pos + Vector3Int.up) == wall || (boxes_tm.GetTile(pos + Vector3Int.up) != target_box && boxes_tm.GetTile(pos + Vector3Int.up) != null)) {
+                    if(room_tm.GetTile(pos + Vector3Int.up) == wall) {
                         return false;
+                    } else if((boxes_tm.GetTile(pos + Vector3Int.up) != target_box && boxes_tm.GetTile(pos + Vector3Int.up) != null)) {
+                        if(!AttemptMoveBoxes(pos + Vector3Int.up, "up", boxes_tm.GetTile(pos + Vector3Int.up))) {
+                            return false;
+                        }
                     }
                 }
                 foreach(Vector3Int pos in all_neighbors_pos) {
@@ -190,8 +194,12 @@ public class TM_Box_Move : MonoBehaviour
             }
             if(side == "bottom") {
                 foreach(Vector3Int pos in all_neighbors_pos) {
-                    if(room_tm.GetTile(pos + Vector3Int.down) == wall || (boxes_tm.GetTile(pos + Vector3Int.down) != target_box && boxes_tm.GetTile(pos + Vector3Int.down) != null)) {
+                    if(room_tm.GetTile(pos + Vector3Int.down) == wall) {
                         return false;
+                    } else if((boxes_tm.GetTile(pos + Vector3Int.down) != target_box && boxes_tm.GetTile(pos + Vector3Int.down) != null)) {
+                        if(!AttemptMoveBoxes(pos + Vector3Int.down, "down", boxes_tm.GetTile(pos + Vector3Int.down))) {
+                            return false;
+                        }
                     }
                 }
                 foreach(Vector3Int pos in all_neighbors_pos) {
@@ -200,8 +208,12 @@ public class TM_Box_Move : MonoBehaviour
             }
             if(side == "left") {
                 foreach(Vector3Int pos in all_neighbors_pos) {
-                    if(room_tm.GetTile(pos + Vector3Int.left) == wall || (boxes_tm.GetTile(pos + Vector3Int.left) != target_box && boxes_tm.GetTile(pos + Vector3Int.left) != null)) {
+                    if(room_tm.GetTile(pos + Vector3Int.left) == wall) {
                         return false;
+                    } else if((boxes_tm.GetTile(pos + Vector3Int.left) != target_box && boxes_tm.GetTile(pos + Vector3Int.left) != null)) {
+                        if(!AttemptMoveBoxes(pos + Vector3Int.left, "left", boxes_tm.GetTile(pos + Vector3Int.left))) {
+                            return false;
+                        }
                     }
                 }
                 foreach(Vector3Int pos in all_neighbors_pos) {
@@ -210,8 +222,12 @@ public class TM_Box_Move : MonoBehaviour
             }
             if(side == "right") {
                 foreach(Vector3Int pos in all_neighbors_pos) {
-                    if(room_tm.GetTile(pos + Vector3Int.right) == wall || (boxes_tm.GetTile(pos + Vector3Int.right) != target_box && boxes_tm.GetTile(pos + Vector3Int.right) != null)) {
+                    if(room_tm.GetTile(pos + Vector3Int.right) == wall) {
                         return false;
+                    } else if((boxes_tm.GetTile(pos + Vector3Int.right) != target_box && boxes_tm.GetTile(pos + Vector3Int.right) != null)) {
+                        if(!AttemptMoveBoxes(pos + Vector3Int.right, "right", boxes_tm.GetTile(pos + Vector3Int.right))) {
+                            return false;
+                        }
                     }
                 }
                 foreach(Vector3Int pos in all_neighbors_pos) {
