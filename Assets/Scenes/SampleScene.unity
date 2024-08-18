@@ -4620,7 +4620,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 4c8e5251a9436c641b77566765dd079c, type: 3}
   - {fileID: 4900000, guid: f205aede2bc8d9245906f3d907ba91fc, type: 3}
   - {fileID: 4900000, guid: 17e4beffc4017ca4db2fb2a430ff291b, type: 3}
-  - {fileID: 0}
+  - {fileID: 4900000, guid: c6f2117d70c9fc04b8d00cc442d6b18e, type: 3}
   - {fileID: 0}
   y_offset: 9
   x_offset: 0
