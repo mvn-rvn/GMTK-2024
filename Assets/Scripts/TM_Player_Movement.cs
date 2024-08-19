@@ -29,6 +29,8 @@ public class TM_Player_Movement : MonoBehaviour
     string into_away;
     string side;
 
+    public bool move_enabled = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +51,7 @@ public class TM_Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((input.HandleInput() == "up" || input.HandleInput() == "down" || input.HandleInput() == "left" || input.HandleInput() == "right") && !grab_mode) {
+        if((input.HandleInput() == "up" || input.HandleInput() == "down" || input.HandleInput() == "left" || input.HandleInput() == "right") && !grab_mode && move_enabled) {
             int prev_x = x;
             int prev_y = y;
             player_tm.ClearAllTiles();
@@ -83,7 +85,7 @@ public class TM_Player_Movement : MonoBehaviour
             player_tm.SetTile(new Vector3Int(x, y, 0), pl_current);
         } 
         //THIS IS A BAD WAY OF DOING THINGS BUT IM TOO LAZY TO FIX IT
-        else if((input.HandleInput() == "up" || input.HandleInput() == "down" || input.HandleInput() == "left" || input.HandleInput() == "right") && grab_mode == true) {
+        else if((input.HandleInput() == "up" || input.HandleInput() == "down" || input.HandleInput() == "left" || input.HandleInput() == "right") && grab_mode == true && move_enabled) {
             int prev_x = x;
             int prev_y = y;
             int box_x_offset = 0;
@@ -157,7 +159,7 @@ public class TM_Player_Movement : MonoBehaviour
                         break;
                 }
             }
-            if(room_tm.GetTile(new Vector3Int(x, y, 0)) == wall || void_tm.GetTile(new Vector3Int(x, y, 0)) == void_tile || ignore_input == true) {
+            if(room_tm.GetTile(new Vector3Int(x, y, 0)) == wall || void_tm.GetTile(new Vector3Int(x, y, 0)) == void_tile || (boxes_tm.GetTile(new Vector3Int(x, y, 0)) != null && into_away == "away") || ignore_input == true) {
                 x = prev_x;
                 y = prev_y;
             } else if(!GameObject.Find("Boxes").GetComponent<TM_Box_Move>().AttemptBoxAlter(
@@ -171,7 +173,7 @@ public class TM_Player_Movement : MonoBehaviour
             player_tm.SetTile(new Vector3Int(x, y, 0), pl_current);
         }
 
-        if(input.HandleInput() == "grab") {
+        if(input.HandleInput() == "grab" && move_enabled) {
             Vector3Int in_front = new Vector3Int(x, y, 0);
             if(pl_current == pl_up) {
                 in_front += new Vector3Int(0, 1, 0);
