@@ -1,0 +1,62 @@
+<scene> START
+<scene> point_up
+<jury> Greetings. You must be Joseph Fitzgerald.
+<sinner> That is who I am.
+<scene> point_down
+<jury> In a few short moments, we are going to weigh your heart. Are you ready?
+<sinner> I am. I know what my fate is, and I have accepted it.
+<scene> heart_place
+<scene> 0.3
+<scene> scale_tip
+<scene> -30
+<scene> 1.5
+<jury> A heavy heart... much heavier than usual.
+<scene> two_hands
+<jury> Remember that everyone is judged fairly.
+<sinner> There is no fairness in what I've done.
+<sinner> Telling my story will serve no purpose.
+<scene> spell
+<scene> level_start
+<scene> 1.0
+<scene> one_hand
+<scene> wait_for_level_completion
+<narration><~> "My, my, Joseph, this is a truly impressive project! And for such a little boy, too!"
+<scene> wait_for_level_completion
+<narration><~> "Joseph Fitzgerald - without a doubt, in all my years of professing, you are the brightest student I've had."
+<narration><~> "You're going to change the world, one day. Believe me."
+<scene> wait_for_level_completion
+<narration><~> "We here at Gavis Nuclear Industries would like to officially invite you to our company."
+<narration><~> "Though we are headquartered in another country, we will pay for all moving expenses and your family's needs."
+<narration><~> "Your intellect will bring us leaps and bounds forward, and the pay will be quite handsome."
+<scene> wait_for_level_completion
+<narration><~> "No, Joseph! We're not just going to uproot our lives and move to a foreign country. We've put our roots here."
+<narration><~> "Think of the children, Joseph. Think of Collin and Susie."
+<scene> wait_for_level_completion
+<narration><~> "I know you have reservations, Mr. Fitzgerald, but look at the state of our country."
+<narration><~> "We're at the brink of war, and everyone knows it. Even the president has acknowledged it."
+<narration><~> "Developing this nuclear missile will be the first step we take to protect ourselves, our families, our livelihoods."
+<narration><~> "...You understand, Joseph?"
+<scene> wait_for_level_end
+<scene> two_hands
+<sinner> They celebrated me for the magnificent savior I created. But all I saw was a cruel weapon.
+<jury> I think I am ready to deliver my final say.
+<option> OP1
+    <1> [1] ALLOW INTO AFTERLIFE 
+    <2> [2] DESTROY SOUL
+</>
+<scene> tutorial_0
+<choices>
+    <OP1><1>
+        <sinner> ...Why? I don't deserve this.
+    <//>
+    <OP1><2>
+        <sinner> As expected.
+    <//>
+</>
+<scene> unclasp
+<scene> one_hand
+<scene> heart_dissipate
+<scene> 0.5
+<scene> scale_tip
+<scene> 30
+<END>

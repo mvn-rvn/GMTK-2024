@@ -84,11 +84,20 @@ public class Level_Completion_Detector : MonoBehaviour
             }
 
             if(win) {
-                loader.level_counter += 1;
-                loader.Load(loader.level_counter);
+                yield return StartCoroutine(LoadWithInk());
             }
 
             yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    IEnumerator LoadWithInk() {
+        yield return StartCoroutine(GameObject.Find("Drip AnimController").GetComponent<Level_Switch_Transition>().InkIn());
+        loader.level_counter += 1;
+        loader.Load(loader.level_counter);
+        GameObject.Find("StageScript").GetComponent<StageScript>().waiting_for_level_completion = false;
+        if(!GameObject.Find("StageScript").GetComponent<StageScript>().final_level) {
+            yield return StartCoroutine(GameObject.Find("Drip AnimController").GetComponent<Level_Switch_Transition>().InkOut());
         }
     }
 }

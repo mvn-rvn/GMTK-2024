@@ -13,7 +13,7 @@ public class Temp_Reload_Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.R)) {
+        if(Input.GetKeyDown(KeyCode.R) && GameObject.Find("Player").GetComponent<TM_Player_Movement>().move_enabled == true) {
             GameObject.Find("LevelLoad").GetComponent<Level_Loader>().Load(GameObject.Find("LevelLoad").GetComponent<Level_Loader>().level_counter);
         }
     }

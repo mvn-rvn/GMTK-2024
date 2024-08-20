@@ -1,0 +1,72 @@
+<scene> START
+<scene> sinnerApproaches
+<jury><~> this soul looks nervous.
+<jury> hello there, correct?
+<sinner> yes, that's me
+<option> OP1
+    <1> you can relax
+    <2> you look nervous
+</>
+<choices>
+    <OP1><1>
+        <narration> sinner seems to calm down
+    <//>
+    <OP1><2>
+        <nararation> sinner less likely to open up
+        <sinner> no! im not nervous...
+    <//>
+</>
+<jury> please set soul on scale
+<scene> soulOnScale
+<jury><~> room for improvement, but can be fixed
+<jury> seems something holding you down
+<choices>
+    <OP1><1>
+        <sinner> might be something
+    <//>
+    <OP1><2>
+        <sinner> nothing that concerns you
+    <//>
+</>
+<jury><~> cant make fair judgement
+<jury> lets get to bottom of this
+<scene> peersIntoMemories
+<jury> car crash. seems significant
+<option> OP2
+    <1> must have been your fault
+    <2> must be more to this
+    <3> wasnt your fault
+</>
+<choices>
+    <OP2><1>
+        <narration> sinner getting irritated
+        <scene> sinnerGlares
+        <sinner> you know nothing
+    <//>
+    <OP2><3>
+        <scene> sinnerCry
+        <sinner> you dont know that
+    <//>
+</>
+<jury><~> should i look further?
+<option> OP3
+    <1> look deeper
+    <2> ready
+</>
+<choices>
+    <OP3><2>
+        <option> OP4
+            <1> Guilty
+            <2> Not Guilty
+        </>
+        <choices>
+            <OP4><1>
+                <END>
+            <//>
+            <OP4><2>
+                <END>
+            <//>
+        </>
+    <//>
+</>
+<END>

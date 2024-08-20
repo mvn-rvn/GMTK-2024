@@ -1,0 +1,74 @@
+<scene> START
+<scene> point_up
+<jury> Hello. You must be Delilah, correct?
+<sinner> Y-yes, that is me.
+<scene> point_down
+<jury><~> (This one looks nervous. I shouldn't be too rough.)
+<jury> As you know, you must be cleared of any sins you've committed before you enter the afterlife.
+<scene> palm_open
+<jury> Do not be afraid. You will be judged fairly.
+<scene> palm_close
+<jury> Place your heart upon the scale so that we may begin.
+<scene> heart_place
+<scene> 0.3
+<scene> scale_tip
+<scene> -10
+<scene> 1.5
+<scene> two_hands
+<jury> ...It seems that you indeed harbor some regrets. I cannot make a fair judgement until I know the full story.
+<scene> spell
+<scene> level_start
+<jury> Let's get to the bottom of this.
+<scene> one_hand
+<scene> tutorial_1
+<scene> wait_for_level_completion
+<scene> tutorial_0
+<narration><~> "BREAKING NEWS: A catastrophic car crash off the east road has resulted in the death of one driver."
+<sinner> W-what are you doing?
+<jury> I am peering through your life experiences. Seeing your memories, as if I were you.
+<scene> wait_for_level_completion
+<narration><~> "Sweetie, please... we just had a huge rush at work today. Just let me rest."
+<sinner> That's...
+<jury> Is he familiar to you?
+<sinner> ...Yes. He was my late husband.
+<scene> tutorial_2
+<scene> wait_for_level_completion
+<scene> tutorial_0
+<narration><~> "For god's sake, you're NEVER home! I'm always the one to pack his lunch, take him to school, put him to sleep!"
+<narration><~> "Just do this one thing for me and go to the store to get that toy he keeps talking about."
+<jury> That voice sounds like yours.
+<sinner> It is me... I wish I never said that to him.
+<scene> wait_for_level_completion
+<narration><~> "I have been asked to inform you that your husband has been pronounced dead, following a car crash off the east road."
+<narration><~> "I extend to your and your family my deepest apologies for your loss."
+<scene> tutorial_3
+<scene> wait_for_level_end
+<scene> tutorial_0
+<narration><~> "Robby... there's something I need to tell you."
+<narration><~> "You need to learn that... there are some accidents that are so bad, you can't come back from them."
+<scene> two_hands
+<jury> I think I see now.
+<sinner> He didn't like me much after that day. When he moved out, he never talked to me again. I... I've never forgived myself.
+<scene> clasp
+<jury> I am ready to deliver my verdict.
+<scene> tutorial_4
+<option> OP1
+    <1> [1] ALLOW INTO AFTERLIFE 
+    <2> [2] DESTROY SOUL
+</>
+<scene> tutorial_0
+<choices>
+    <OP1><1>
+        <sinner> Really?... Thank you. Thank you for your forgiveness.
+    <//>
+    <OP1><2>
+        <sinner> ...I... I suppose it's deserved.
+    <//>
+</>
+<scene> unclasp
+<scene> one_hand
+<scene> heart_dissipate
+<scene> 0.5
+<scene> scale_tip
+<scene> 30
+<END>

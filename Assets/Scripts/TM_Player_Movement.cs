@@ -11,6 +11,7 @@ public class TM_Player_Movement : MonoBehaviour
     Tilemap room_tm;
     Tilemap boxes_tm;
     Tilemap void_tm;
+    Tilemap grab_tm;
 
     public TileBase pl_up;
     public TileBase pl_down;
@@ -20,16 +21,19 @@ public class TM_Player_Movement : MonoBehaviour
     public TileBase wall;
     public TileBase void_tile;
 
+    public TileBase ind_up;
+    public TileBase ind_down;
+    public TileBase ind_left;
+    public TileBase ind_right;
+
     int x = 0;
     int y = 0;
-    public int start_x;
-    public int start_y;
 
     public bool grab_mode;
     string into_away;
     string side;
 
-    public bool move_enabled = true;
+    public bool move_enabled = false;
 
 
     // Start is called before the first frame update
@@ -40,10 +44,9 @@ public class TM_Player_Movement : MonoBehaviour
         room_tm = GameObject.Find("Room").GetComponent<Tilemap>();
         boxes_tm = GameObject.Find("Boxes").GetComponent<Tilemap>();
         void_tm = GameObject.Find("VoidTiles").GetComponent<Tilemap>();
+        grab_tm = GameObject.Find("Tilemap Layer Specifically For Grab Effect").GetComponent<Tilemap>();
         player_tm.ClearAllTiles();
         pl_current = pl_down;
-        x = start_x;
-        y = start_y;
         grab_mode = false;
         player_tm.SetTile(new Vector3Int(x, y, 0), pl_current);
     }
@@ -195,6 +198,19 @@ public class TM_Player_Movement : MonoBehaviour
                         Debug.Log("grab enabled");
                         break;
                 }
+            }
+        }
+
+        grab_tm.ClearAllTiles();
+        if(grab_mode) {
+            if(pl_current == pl_up) {
+                grab_tm.SetTile(new Vector3Int(x, y, 0), ind_up);
+            } else if(pl_current == pl_down) {
+                grab_tm.SetTile(new Vector3Int(x, y, 0), ind_down);
+            } else if(pl_current == pl_left) {
+                grab_tm.SetTile(new Vector3Int(x, y, 0), ind_left);
+            } else if(pl_current == pl_right) {
+                grab_tm.SetTile(new Vector3Int(x, y, 0), ind_right);
             }
         }
     }
